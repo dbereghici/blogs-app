@@ -18,6 +18,10 @@ Make sure you have the following software installed on your machine:
 
 ### Installation
 
+You can run the application either locally or with Docker. Follow the appropriate instructions below:
+
+#### Running Locally
+
 1. Clone the repository:
 
     ```bash
@@ -40,30 +44,56 @@ Make sure you have the following software installed on your machine:
     npm install
     ```
 
-### Configuration
+4. Update the configuration files with the required keys for MongoDB and Google OAuth:
 
-Update the configuration file with the required keys for Mongo and Google:
+    - `config/dev.js`: Update this file with your keys (development)
+    - `config/dev.js`: Update this file with your keys (production)
 
-- `config/dev.js`: Update this file with your keys (development)
-- `config/dev.js`: Update this file with your keys (production)
+5. Start both client and backend servers:
 
-### Running
+    ```bash
+    # In the client directory
+    cd client
+    npm start
 
-Start both client and backend servers:
+    # In the backend directory
+    cd ../backend
+    npm start
+    ```
 
-```bash
-# In the client directory
-cd client
-npm start
+    The client should be running on [http://localhost:3000](http://localhost:3000), and the backend on [http://localhost:5000](http://localhost:5000).
 
-# In the backend directory
-cd ../backend
-npm start
-```
+#### Running with Docker
 
-The client should be running on [http://localhost:3000](http://localhost:3000), and the backend on [http://localhost:5000](http://localhost:5000).
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/yourusername/your-repository.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd your-repository
+    ```
+
+3. Make sure you have Docker and Docker Compose installed on your machine.
+
+4. Update the configuration files with the required keys for MongoDB and Google OAuth:
+
+    - `config/dev.js`: Update this file with your keys (development)
+    - `config/dev.js`: Update this file with your keys (production)
+
+5. Run the following command to start the application with Docker Compose:
+
+    ```bash
+    docker-compose up --build
+    ```
+
+    This command will build the Docker images and start the containers for the client, backend, and Redis services.
+
+    The client should be accessible on [http://localhost](http://localhost), and the backend on [http://localhost:5000](http://localhost:5000).
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
