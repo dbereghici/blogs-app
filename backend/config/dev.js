@@ -5,4 +5,5 @@ module.exports = {
   mongoURI:
     'your_key',
   cookieKey: '123123123',
+  redisUrl: 'redis://redis:6379'
 };
